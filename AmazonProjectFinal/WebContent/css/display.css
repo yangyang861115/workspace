@@ -1,0 +1,41 @@
+body {
+  background-color: #F7F7F7;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 2000px;
+  }
+}
+.container-narrow > hr {
+  margin: 15px 0;
+}
+
+.container-fluid{
+	margin:10px 20px;
+	
+}
+.row{
+	border-bottom: 1px solid #e5e5e5;	
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.col-md-4{
+	margin-top:20px;
+	margin-bottom:20px;
+		
+}
+
+.result{
+	margin-top:30px;
+	margin-bottom:20px;
+	
+}
+
+.b{
+	border-bottom: 0;
+}
+

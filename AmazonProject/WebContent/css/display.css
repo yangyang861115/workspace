@@ -1,0 +1,51 @@
+#container{
+	width: 100%;
+	
+
+}
+
+.file {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 30%;
+  height: 160px;
+  padding: 20px;
+  overflow: hidden;
+  border: none;
+  font: normal 22px/1 "Times New Roman", Times, serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: #3e7f99;
+  -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+	
+}
+
+
+#display > textarea{
+  
+  height: 200px;
+  width: 29%;
+  padding: 20px;
+ 
+  
+}
+
+.result {
+	display: inline-block;
+
+ }
+ 
+
+ 
+ .chosenFile{
+ 	display: inline-block;
+ 	width: 30%;
+ 	padding: 20px;
+  text-align: left;
+ }
