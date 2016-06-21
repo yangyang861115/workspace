@@ -28,6 +28,9 @@ import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.search.similarities.BM25Similarity;
+import org.apache.lucene.search.similarities.DefaultSimilarity;
+import org.apache.lucene.search.similarities.LMDirichletSimilarity;
+import org.apache.lucene.search.similarities.LMJelinekMercerSimilarity;
 import org.apache.lucene.store.FSDirectory;
 
 
@@ -42,17 +45,19 @@ public class getScores {
         IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(index)));
         IndexSearcher searcher = new IndexSearcher(reader);
         Analyzer analyzer = new StandardAnalyzer();
-        searcher.setSimilarity(new BM25Similarity());
-
+        //searcher.setSimilarity(new BM25Similarity());
+        //searcher.setSimilarity(new DefaultSimilarity());
+        //searcher.setSimilarity(new LMDirichletSimilarity());                
+        searcher.setSimilarity(new LMJelinekMercerSimilarity((float) 0.7));
         QueryParser parser = new QueryParser(field, analyzer);
         Query query = parser.parse(queryString);
         // System.out.println("Searching for: " + query.toString(field));
 
-        TopDocs results = searcher.search(query, 1000);
+        TopDocs results = searcher.search(query, 10);
         ScoreDoc[] hits = results.scoreDocs;
 
         int numTotalHits = results.totalHits;
-        System.out.println(numTotalHits + " total matching documents for field: " + field);
+        //System.out.println(numTotalHits + " total matching documents for field: " + field);
         int rank = 1;
         for (int i = 0; i < hits.length; i++) {
             Document doc = searcher.doc(hits[i].doc);
@@ -72,20 +77,20 @@ public class getScores {
         // TODO Auto-generated method stub
         String index = "/Users/yangyang/Desktop/lucene_index/index01";
         String filePath = "/Users/yangyang/Desktop/lucene_index/queries2.txt";
-        String resultPath = "/Users/yangyang/Desktop/lucene_index/results/reviewFieldScores.txt";
-        // String resultPath2 =
-        // "/Users/yangyang/Desktop/lucene_index/results/tipFieldScores.txt";
+        String resultPath = "/Users/yangyang/Desktop/lucene_index/results/LMJReviewFieldScores.txt";
+         String resultPath2 =
+         "/Users/yangyang/Desktop/lucene_index/results/LMJTipFieldScores.txt";
         int query_id = 1;
         String query = "";
         BufferedReader br = new BufferedReader(new FileReader(filePath));
         getScores score = new getScores();
-        Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(resultPath), "utf-8"));
+        Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(resultPath2), "utf-8"));
         // Writer writer = new BufferedWriter(new OutputStreamWriter(
         // new FileOutputStream(resultPath2), "utf-8"));
         while ((query = br.readLine()) != null) {
 
-            score.searchFiles(index, query, query_id, "review", writer);
-            // score.searchFiles(index, query, query_id, "tip", writer);
+            //score.searchFiles(index, query, query_id, "review", writer);
+            score.searchFiles(index, query, query_id, "tip", writer);
             query_id++;
         }
         writer.close();

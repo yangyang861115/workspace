@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;jquery&apos; to &apos;library&apos;&#x0A;- Original project: &apos;AmazonProject&apos;&#x0A;- Destination element: &apos;library&apos;&#x0A;- Original element: &apos;jquery&apos;" description="Copy folder" element1="WebContent/library/jquery" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1439961590741" target="/AmazonProjectFinal/WebContent/library" units="0" version="1.0"/>
+</session>

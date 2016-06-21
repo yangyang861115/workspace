@@ -1,0 +1,194 @@
+package yelp;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+//import org.apache.commons.lang3.StringUtils;
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
+import org.apache.lucene.document.Field.Store;
+import org.apache.lucene.document.FieldType;
+import org.apache.lucene.document.StringField;
+import org.apache.lucene.document.TextField;
+import org.apache.lucene.index.CorruptIndexException;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.index.IndexWriterConfig.OpenMode;
+import org.apache.lucene.store.Directory;
+import org.apache.lucene.store.FSDirectory;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
+
+public class generateYelpIndex {
+    private final String trainingIndexFilePath = "/Users/yangyang/Desktop/lucene_index/trainingIndexFilePath";
+    private final String testIndexFilePath = "/Users/yangyang/Desktop/lucene_index/testIndexFilePath";
+    private IndexWriter writer = null;
+    private MongoClient mongoClient = null;
+    private DB db;
+
+    private generateYelpIndex() throws FileNotFoundException, CorruptIndexException, IOException {
+        try {
+            mongoClient = new MongoClient("localhost", 27017);
+            db = mongoClient.getDB("yelp");
+            System.out.println("creating Training index");
+            createTrainingIndexWriter(mongoClient, db, trainingIndexFilePath);
+            // System.out.println("creating test index");
+            // createTestIndexWriter(mongoClient,db,testIndexFilePath);
+            // System.out.println("finished indexing");
+        } catch (Exception e) {
+            System.out.println("Exception occured");
+        }
+
+    }
+
+    public void createTrainingIndexWriter(MongoClient mongoClient, DB db, String trainingIndexFilePath) {
+        try {
+            Analyzer analyzer = new StandardAnalyzer();
+            IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+            iwc.setOpenMode(OpenMode.CREATE);
+            System.out.println("opening the path");
+            Directory dir = FSDirectory.open(Paths.get(trainingIndexFilePath));
+            System.out.println("closing the path");
+            writer = new IndexWriter(dir, iwc);
+
+            DBCollection training_Collection = db.getCollection("training_collection");
+
+            List<String> categories = (List<String>) training_Collection.distinct("categories");
+            for (String category : categories) {
+                System.out.println(category);
+            }
+//            categories.removeAll(Collections.singleton(null));
+//            DBObject training_query = new BasicDBObject();
+//            training_query.put("_id", 0);
+//            training_query.put("reviews", 1);
+//            training_query.put("tips", 1);
+//
+//            String reviewtips = null;
+
+//            for (String category : categories) {
+//                Document luceneDoc = new Document();
+//                DBObject categoriesQuery = new BasicDBObject("categories", category);
+//                DBCursor cursor = training_Collection.find(categoriesQuery, training_query);
+//                System.out.println("cursor");
+//                while (cursor.hasNext()) {
+//                    DBObject rewtip = cursor.next();
+//                    /*
+//                     * List<String> review =
+//                     * (List<String>)rewtip.get("reviews"); List<String> tip =
+//                     * (List<String>)rewtip.get("tips"); for(String reviews :
+//                     * review) { reviewtips +=reviews; } for(String tips : tip)
+//                     * { reviewtips +=tips; }
+//                     */
+//                    // String review =
+//                    // StringUtils.substringBetween((String)rewtip.get("reviews"),"[","]");
+//                    // System.out.println(review);
+//                    // String tip =
+//                    // StringUtils.substringBetween((String)rewtip.get("tips"),"[","]");
+//                    // reviewtips = review.concat(tip);
+//                    // String review=rewtip.get("reviews").toString();
+//                    // review = review.replace("[", "").replace("]","");
+//
+//                    // String tip=rewtip.get("tips").toString();
+//                    // tip = tip.replace("[", "").replace("]","");
+//                    reviewtips = rewtip.get("reviews").toString() + rewtip.get("tips").toString();
+//                    reviewtips = reviewtips.replace("[", "").replace("]", "");
+//
+//                    // reviewtips=reviewtips.replace("[", "").replace("]","");
+//                    // System.out.println(reviewtips);
+//                    if (reviewtips != null) {
+//                        // luceneDoc.add(new
+//                        // TextField("reviewtips",reviewtips,Store.YES));
+//                        FieldType type = new FieldType();
+//
+//                        type.setStored(true);
+//
+//                        Field field = new Field("reviewtips", reviewtips, type);
+//                        luceneDoc.add(field);
+//                    }
+//
+//                }
+//                luceneDoc.add(new StringField("category", category, Store.YES));
+//                writer.addDocument(luceneDoc);
+//            }
+    
+    
+   //         writer.forceMerge(1);
+   //         writer.commit();
+            writer.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void createTestIndexWriter(MongoClient mongoClient, DB db, String testIndexFilePath) {
+        try {
+            Analyzer analyzer = new StandardAnalyzer();
+            IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+            iwc.setOpenMode(OpenMode.CREATE);
+            Directory dir = FSDirectory.open(Paths.get(testIndexFilePath));
+            writer = new IndexWriter(dir, iwc);
+
+            DBCollection test_collection = db.getCollection("test_collection");
+            DBObject test_query = new BasicDBObject();
+            test_query.put("_id", 0);
+            DBCursor testCursor = test_collection.find(new BasicDBObject(), test_query);
+            Document luceneDoc = new Document();
+            while (testCursor.hasNext()) {
+                DBObject toIndexColumns = testCursor.next();
+                String business_id = (String) toIndexColumns.get("business_id");
+                String business_name = (String) toIndexColumns.get("name");
+                List<String> Categories = (List<String>) toIndexColumns.get("categories");
+                List<String> reviews = (List<String>) toIndexColumns.get("reviews");
+                List<String> tips = (List<String>) toIndexColumns.get("tips");
+
+                luceneDoc.add(new StringField("business_id", business_id, Store.YES));
+                luceneDoc.add(new StringField("business_name", business_name, Store.YES));
+                for (String category : Categories) {
+                    luceneDoc.add(new StringField("category", category, Store.YES));
+                }
+                String reviewtips = null;
+                for (String review : reviews) {
+                    reviewtips += review;
+                }
+                for (String tip : tips) {
+                    reviewtips += tip;
+                }
+                luceneDoc.add(new StringField("reviewtips", reviewtips, Store.YES));
+                writer.addDocument(luceneDoc);
+
+            } // end of while
+            testCursor.close();
+            writer.forceMerge(1);
+            writer.commit();
+            writer.close();
+        } // end of try
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }// end of method
+
+    public static void main(String[] args) {
+        try {
+            new generateYelpIndex();
+
+        } catch (Exception ex) {
+            System.out.println("cannot start");
+        }
+
+    }
+}
