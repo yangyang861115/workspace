@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.apache.lucene.index.IndexWriter"/>
-<fullyQualifiedTypeName name="org.apache.lucene.document.StringField"/>
-<fullyQualifiedTypeName name="org.apache.lucene.document.TextField"/>
 <fullyQualifiedTypeName name="org.apache.lucene.document.Field"/>
 <fullyQualifiedTypeName name="java.nio.file.Files"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
@@ -48,7 +45,6 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="com.mongodb.BasicDBObject"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="java.util.SortedSet"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.similarities.DefaultSimilarity"/>
 <fullyQualifiedTypeName name="org.apache.lucene.search.similarities.LMDirichletSimilarity"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.ArrayDeque"/>
 </qualifiedTypeNameHistroy>
