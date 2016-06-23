@@ -1,0 +1,14 @@
+package easy;
+/*
+ * 345
+ * 
+ * 
+ * */
+public class ReverseVowelsOfAString {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+    }
+
+}
