@@ -10,6 +10,7 @@ package easy;
 
 public class AddDigits {
     public int addDigits(int num) {
+        if (num < 0) throw new IllegalArgumentException();
         //return num - 9 * (int) (Math.floor((num - 1) / 9));
         return num == 0 ? 0 : (num % 9 == 0? 9 : (num % 9));
     }
