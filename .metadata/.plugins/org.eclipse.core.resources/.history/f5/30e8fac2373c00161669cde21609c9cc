@@ -1,0 +1,39 @@
+package easy;
+/*
+ * 67
+ * Given two binary strings, return their sum (also a binary string).
+For example,
+a = "11"
+b = "1"
+Return "100".
+ * */
+public class AddBinary {
+    public String addBinary(String a, String b) {
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+        int carry = 0;
+        StringBuilder stb = new StringBuilder();
+        while(i >=0 || j >= 0){
+            int c1 = (i >= 0 ? Character.getNumericValue(a.charAt(i)) : 0);
+            int c2 = (j >= 0 ? Character.getNumericValue(b.charAt(j)) : 0);
+            if(c1 + c2 == 2) {
+                if(carry == 1) {
+                    stb.insert(0, '1');
+                    carry = 0;
+                }
+            } else if(c1 + c2 == 0) {
+                stb.insert(0, carry);
+            }
+            i--;
+            j--;
+            System.out.println("c1 = " + c1 + " c2 = " + c2);
+        }
+        
+        return "";
+    }
+    public static void main(String[] args) {
+        AddBinary ab = new AddBinary();
+        ab.addBinary("11", "1");
+    }
+
+}
