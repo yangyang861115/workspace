@@ -49,12 +49,4 @@ public class BestTimeToBuyAndSellStock {
         }
         return p;
     }
-
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        int prices[] = new int[] { 7, 1, 5, 3, 6, 4 };
-        BestTimeToBuyAndSellStock bt = new BestTimeToBuyAndSellStock();
-        System.out.print(bt.maxProfit(prices));
-    }
-
 }

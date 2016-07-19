@@ -24,11 +24,4 @@ public class ValidAnagram {
         }
         return true;
     }
-    
-    public static void main(String[] args) {
-        ValidAnagram va = new ValidAnagram();
-        System.out.println(va.isAnagram("a", "b"));
-
-    }
-
 }

@@ -18,10 +18,5 @@ public class ContainsDuplicate {
         }
         return false;
     }
-    public static void main(String[] args) {
-       int[] nums = new int[]{1, 2, 1, 3, 5};
-       ContainsDuplicate cd = new ContainsDuplicate();
-       System.out.println(cd.containsDuplicate(nums));
-    }
-
+   
 }

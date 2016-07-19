@@ -33,10 +33,4 @@ public class HappyNumber {
         }
         return true;
     }
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        HappyNumber hnum = new HappyNumber();
-        System.out.println(hnum.isHappy(19));
-    }
-
 }

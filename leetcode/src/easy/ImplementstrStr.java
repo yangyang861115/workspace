@@ -18,11 +18,4 @@ public class ImplementstrStr {
             }         
         }
     }
-    
-    public static void main(String[] args) {
-        ImplementstrStr str = new ImplementstrStr();
-        System.out.println(str.strStr("abc", "c"));
-        
-    }
-
 }

@@ -24,13 +24,4 @@ public class RemoveElement {
         return m;
         
     }
-
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        RemoveElement re = new RemoveElement();
-        System.out.println(re.removeElement(new int[] { 3, 5, 3 }, 5));
-        
-
-    }
-
 }

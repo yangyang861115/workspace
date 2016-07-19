@@ -21,11 +21,4 @@ public class MajorityElement {
         }
         return majority;
     }
-    public static void main(String[] args) {
-        MajorityElement me = new MajorityElement();
-        int[] nums = new int[]{1, 2, 2, 1, 1};
-        System.out.println(me.majorityElement(nums));
-
-    }
-
 }

@@ -10,10 +10,5 @@ public class PowerOfFour {
     public boolean isPowerOfFour(int num) {
         return ((num & (num - 1)) == 0 && num > 0 && (num - 1) % 3 == 0);
     }
-    public static void main(String[] args) {
-        PowerOfFour pf = new PowerOfFour();
-        System.out.println(pf.isPowerOfFour(8));
-        System.out.println(pf.isPowerOfFour(16));
-    }
-
+    
 }

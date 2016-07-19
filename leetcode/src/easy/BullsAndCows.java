@@ -68,13 +68,5 @@ public class BullsAndCows {
         answer = n1 + "A" + n2 + "B";
         return answer;
     }
-    
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        BullsAndCows bc = new BullsAndCows();
-        System.out.println(bc.getHint2("1807", "7810"));
-        System.out.println(bc.getHint2("1123", "0111"));
-
-    }
-
+ 
 }

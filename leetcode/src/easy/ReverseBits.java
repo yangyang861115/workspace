@@ -17,10 +17,4 @@ public class ReverseBits {
         }
         return ans;
     }
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        ReverseBits rb = new ReverseBits();
-        System.out.print(rb.reverseBits(-2147483648));
-    }
-
 }

@@ -28,14 +28,4 @@ public class IntersectionOfTwoArrays {
         }
         return answer;
     }
-    
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        IntersectionOfTwoArrays interarray = new IntersectionOfTwoArrays();
-        int[] array1 = new int[]{2, 3, 1};
-        int[] array2 = new int[]{3, 4, 2, 2, 1};
-        int[] answer = interarray.intersection(array1, array2);
-        System.out.println(Arrays.toString(answer));
-        }
-
 }

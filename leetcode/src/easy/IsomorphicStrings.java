@@ -35,12 +35,4 @@ public class IsomorphicStrings {
      
         return true;
     }
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        IsomorphicStrings test = new IsomorphicStrings();
-        System.out.println(test.isIsomorphic("egg", "add"));
-        System.out.println(test.isIsomorphic("foo", "bar"));
-        System.out.println(test.isIsomorphic("paper", "title"));
-    }
-
 }

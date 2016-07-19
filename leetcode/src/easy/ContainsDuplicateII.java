@@ -38,10 +38,5 @@ public class ContainsDuplicateII {
         }
         return false;
     }
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        ContainsDuplicateII cd = new ContainsDuplicateII();
-        System.out.print(cd.containsNearbyDuplicate2(new int[]{1,2,1}, 0));
-    }
-
+   
 }

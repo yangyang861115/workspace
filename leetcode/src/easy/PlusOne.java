@@ -21,11 +21,4 @@ public class PlusOne {
         ans[0] = 1;
         return ans;
     }
-
-    public static void main(String[] args) {
-        PlusOne po = new PlusOne();
-        System.out.println(Arrays.toString((po.plusOne(new int[]{9, 9, 9}))));
-        System.out.println(Arrays.toString((po.plusOne(new int[]{9, 0, 9}))));
-    }
-
 }

@@ -19,10 +19,4 @@ public class ClimbingStairs {
 
         return answer[n];
     }
-
-    public static void main(String[] args) {
-        ClimbingStairs cs = new ClimbingStairs();
-        System.out.println(cs.climbStairs(4));
-    }
-
 }

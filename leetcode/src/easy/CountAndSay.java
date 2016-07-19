@@ -40,10 +40,4 @@ public class CountAndSay {
         return ans[n - 1];
     }
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        CountAndSay cs = new CountAndSay();
-        System.out.println(cs.countAndSay(4));
-    }
-
 }

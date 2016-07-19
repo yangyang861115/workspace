@@ -35,10 +35,4 @@ public class AddBinary {
         
         return stb.toString();
     }
-    public static void main(String[] args) {
-        AddBinary ab = new AddBinary();
-        String ans = ab.addBinary("11", "1");
-        System.out.println(ans);
-    }
-
 }

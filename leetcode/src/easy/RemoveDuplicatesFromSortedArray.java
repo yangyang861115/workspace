@@ -34,9 +34,4 @@ public class RemoveDuplicatesFromSortedArray {
 //            if (A[i]!=A[j]) A[++j]=A[i];
 //        return ++j;
     }
-    public static void main(String[] args) {
-        RemoveDuplicatesFromSortedArray rd = new RemoveDuplicatesFromSortedArray();
-        System.out.println(rd.removeDuplicates(new int[]{1, 2, 2, 3}));
-    }
-
 }

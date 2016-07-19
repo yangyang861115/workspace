@@ -24,13 +24,4 @@ public class MoveZeroes {
             i++;
         }
     }
-    
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        MoveZeroes mz = new MoveZeroes();
-        int[] array = new int[]{0, 1, 2, 0, 0, 3};
-        mz.moveZeroes(array);
-        System.out.println(Arrays.toString(array));
-    }
-
 }

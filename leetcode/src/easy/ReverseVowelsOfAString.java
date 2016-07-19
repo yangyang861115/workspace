@@ -29,10 +29,4 @@ public class ReverseVowelsOfAString {
         }
         return new String(words);
     }
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        ReverseVowelsOfAString rs = new ReverseVowelsOfAString();
-        System.out.println(rs.reverseVowels("leetcode"));
-    }
-
 }

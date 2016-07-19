@@ -15,9 +15,4 @@ public class ReverseString {
         }
         return new String(charArray);
     }
-    
-    public static void main(String[] args){
-        ReverseString rs = new ReverseString();
-        System.out.print(rs.reverseString("hello form Yang!"));
-    }
 }

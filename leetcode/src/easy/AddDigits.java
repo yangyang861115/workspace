@@ -14,12 +14,4 @@ public class AddDigits {
         //return num - 9 * (int) (Math.floor((num - 1) / 9));
         return num == 0 ? 0 : (num % 9 == 0? 9 : (num % 9));
     }
-    
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        AddDigits ad = new AddDigits();
-        System.out.println(ad.addDigits(18));        
-        System.out.println(ad.addDigits(20));
-    }
-
 }

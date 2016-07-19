@@ -20,10 +20,4 @@ public class RectangleArea {
         
         return ans - overlap;
     }
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        RectangleArea ra = new RectangleArea();
-        System.out.println(ra.computeArea(-2, -2, 2, 2, -2, -2, 2, 2));
-    }
-
 }

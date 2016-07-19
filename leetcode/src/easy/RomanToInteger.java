@@ -50,10 +50,4 @@ public class RomanToInteger {
             return -1;
         }
     }
-
-    public static void main(String[] args) {
-        RomanToInteger ri = new RomanToInteger();
-        System.out.println(ri.romanToInt("VVI"));
-    }
-
 }

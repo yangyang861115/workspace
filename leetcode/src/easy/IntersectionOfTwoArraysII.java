@@ -40,14 +40,4 @@ public class IntersectionOfTwoArraysII {
 
     }
 
-    public static void main(String[] args) {
-        IntersectionOfTwoArraysII intersection = new IntersectionOfTwoArraysII();
-        int[] num1  = new int[]{1, 2, 2, 1};
-        int[] num2  = new int[]{2, 2, 1};
-        int[] ans = intersection.intersect(num1, num2);
-        System.out.println(Arrays.toString(ans));
-            
-
-    }
-
 }

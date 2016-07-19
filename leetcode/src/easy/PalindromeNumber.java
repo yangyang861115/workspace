@@ -14,12 +14,4 @@ public class PalindromeNumber {
         }
         return rev == x || rev / 10 == x;
     }
-    
-    public static void main(String[] args) {
-        PalindromeNumber pn = new PalindromeNumber();
-        System.out.println(pn.isPalindrome(0));
-        System.out.println(pn.isPalindrome(1221));
-        System.out.println(pn.isPalindrome(-8));
-        System.out.println(pn.isPalindrome(12021));
-    }
 }

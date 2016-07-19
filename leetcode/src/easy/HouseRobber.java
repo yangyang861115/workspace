@@ -42,11 +42,4 @@ public class HouseRobber {
         }
         return Math.max(dp[n-1][0], dp[n-1][1]);
     }
-
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        HouseRobber hr = new HouseRobber();
-        System.out.println(hr.rob2(new int[] { 2, 1, 1, 2 , 5}));
-    }
-
 }

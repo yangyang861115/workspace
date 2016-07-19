@@ -25,14 +25,4 @@ public class ValidParentheses {
         
         return stack.isEmpty();
     }
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        ValidParentheses vp = new ValidParentheses();
-        System.out.println(vp.isValid("["));
-        System.out.println(vp.isValid("]"));
-        System.out.println(vp.isValid("[][()]"));
-        System.out.println(vp.isValid("[()"));
-
-    }
-
 }
