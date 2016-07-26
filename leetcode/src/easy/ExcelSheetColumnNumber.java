@@ -7,14 +7,12 @@ package easy;
  * */
 public class ExcelSheetColumnNumber {
     public int titleToNumber(String s) {
-        char[] array = s.toCharArray();
-        int answer = 0;
-        int base = 1;
-        for(int i = array.length - 1; i >= 0; i--){
-            answer += (array[i] - 'A' + 1) * base;
-            base *= 26;
+        int ans = 0;
+        for(int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            ans = ans * 26 + c -'A' + 1;
         }
-        return answer;
+        return ans;
     }
    
 }

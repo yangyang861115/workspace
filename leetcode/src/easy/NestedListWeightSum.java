@@ -1,4 +1,6 @@
 package easy;
+
+import java.util.List;
 /*
  * 339
  * Given a nested list of integers, return the sum of all integers in the list weighted by their depth.
@@ -29,23 +31,23 @@ package easy;
  */
 public class NestedListWeightSum {
     
-public int depthSum(List<NestedInteger> nestedList) {
-        
-        return helper(nestedList, 1, 0);
-    }
-    
-    public int helper(List<NestedInteger> nestedList, int depth, int total){
-        if(nestedList == null) return 0;
-        for(int i = 0; i < nestedList.size(); i++) {
-            
-            if(nestedList.get(i).isInteger()) {
-                total += depth * (nestedList.get(i).getInteger());
-            } else {
-                total += helper(nestedList.get(i).getList(), depth+1, 0);
-            }
-        }
-        return total;
-        
-    }
-
+//public int depthSum(List<NestedInteger> nestedList) {
+//        
+//        return helper(nestedList, 1, 0);
+//    }
+//    
+//    public int helper(List<NestedInteger> nestedList, int depth, int total){
+//        if(nestedList == null) return 0;
+//        for(int i = 0; i < nestedList.size(); i++) {
+//            
+//            if(nestedList.get(i).isInteger()) {
+//                total += depth * (nestedList.get(i).getInteger());
+//            } else {
+//                total += helper(nestedList.get(i).getList(), depth+1, 0);
+//            }
+//        }
+//        return total;
+//        
+//    }
+//
 }

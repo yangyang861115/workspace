@@ -17,16 +17,14 @@ public class ReverseLinkedList {
     }
 
     public ListNode reverseList(ListNode head) {
-        if (head == null)
-            return head;
-        ListNode node = null;
-        while (head.next != null) {
-            ListNode tmp = head;
-            head = head.next;
-            tmp.next = node;
-            node = tmp;
+        ListNode pre = null;
+        
+        while(head != null) {
+            ListNode tmp = head.next;
+            head.next = pre;
+            pre = head;
+            head = tmp;
         }
-        head.next = node;
-        return head;
+        return pre;
     }
 }

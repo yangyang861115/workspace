@@ -18,5 +18,10 @@ public class ContainsDuplicate {
         }
         return false;
     }
-   
+//    public static void main(String args[]) {
+//        Integer[] nums = {1, 2, 3, 3};
+//        
+//        Set<Integer> set = new HashSet<Integer>(Arrays.asList(nums));
+//        System.out.print(set.size());
+//    }
 }

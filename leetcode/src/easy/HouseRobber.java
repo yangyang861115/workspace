@@ -42,4 +42,19 @@ public class HouseRobber {
         }
         return Math.max(dp[n-1][0], dp[n-1][1]);
     }
+    
+    public int rob3(int[] nums) {
+        int n = nums.length;
+        if(n == 0) return 0;
+        
+        int twostep = 0;
+        int onestep = nums[0];
+        int money = onestep;
+        for(int i = 2; i <= n; i++) {
+            money = Math.max(twostep + nums[i - 1], onestep);
+            twostep = onestep;
+            onestep = money;
+        }
+        return money;
+    }
 }

@@ -40,4 +40,29 @@ public class CountAndSay {
         return ans[n - 1];
     }
 
+    
+    public String countAndSay2(int n) {
+        String pre = "1";
+        if(n == 1) return pre;
+        
+        for(int i = 2 ; i <= n; i++) {
+            System.out.println(pre);
+            String next = "";
+            int len = pre.length();
+            int count = 1;
+            char c = pre.charAt(0);
+            for(int j = 1; j < len; j++) {
+                if(pre.charAt(j) == c) count++;
+                else {
+                    next += count + ""+ c;
+                    c = pre.charAt(j);
+                    count = 1;
+                }
+            }
+           
+            next += count + "" + c;
+            pre = next;
+        }
+        return pre;
+    }
 }

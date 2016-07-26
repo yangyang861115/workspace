@@ -8,6 +8,9 @@ package easy;
  * */
 public class PowerOfFour {
     public boolean isPowerOfFour(int num) {
+//        if(num <= 0) return false;
+//        return (Math.log(num) / Math.log(4)) % 1 == 0;
+        
         return ((num & (num - 1)) == 0 && num > 0 && (num - 1) % 3 == 0);
     }
     
