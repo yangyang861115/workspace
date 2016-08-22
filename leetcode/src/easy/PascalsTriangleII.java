@@ -37,7 +37,7 @@ public class PascalsTriangleII {
         return cur;
     }
 
-    //solution form smart person
+    //solution from smart person
     public List<Integer> getRow2(int rowIndex) {
         List<Integer> list = new ArrayList<Integer>();
         if (rowIndex < 0)

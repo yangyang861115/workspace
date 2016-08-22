@@ -15,7 +15,7 @@ package easy;
  *  */
 public class BestTimeToBuyAndSellStock {
     public int maxProfit(int[] prices) {
-        //solution 1
+        //solution 1 O(n*n)
      // for(int i = 0; i < n - 1; i++) {
         // for(int j = i + 1; j < n; j++) {
         // if(prices[j]-prices[i] > maxprofit)

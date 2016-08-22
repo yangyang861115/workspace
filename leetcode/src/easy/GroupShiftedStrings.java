@@ -19,10 +19,6 @@ A solution is:
   ["acef"],
   ["a","z"]
 ]
-Show Company Tags
-Show Tags
-Show Similar Problems
-
  * */
 public class GroupShiftedStrings {
     public List<List<String>> groupStrings(String[] strings) {
@@ -59,9 +55,9 @@ public class GroupShiftedStrings {
     }
     
     
-//    public  static void main(String[] args) {
-//        GroupShiftedStrings gs = new GroupShiftedStrings();
-//        String[] test = new String[]{"abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"};
-//        System.out.println(gs.groupStrings(test).toString());
-//    }
+    //public  static void main(String[] args) {
+        //GroupShiftedStrings gs = new GroupShiftedStrings();
+        //String[] test = new String[]{"abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"};
+        //System.out.println(gs.groupStrings(test).toString()); 
+    //}
 }

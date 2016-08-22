@@ -27,13 +27,6 @@ public class MergeSortedArray {
                 i--;
             }
         }
-        //no need for the following code
-//        if (p2 == -1) {
-//            while (p1 >= 0) {
-//                nums1[i] = nums1[p1];
-//                p1--;
-//                i--;
-//            }
-//        }
+        
     }
 }

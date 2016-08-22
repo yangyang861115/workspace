@@ -3,6 +3,7 @@ package easy;
  * 9
  * Determine whether an integer is a palindrome.
  * Do this without extra space.
+ * 100000, 12321, 1221, -5665, 0
  * */
 public class PalindromeNumber {
     public boolean isPalindrome(int x) {

@@ -30,9 +30,8 @@ isUnique("cane") -> false
 isUnique("make") -> true
  * */
 public class UniqueWordAbbreviation {
-private Map<String, Set<String>> mydict;
+    private Map<String, Set<String>> mydict;
     
-
     public UniqueWordAbbreviation(String[] dictionary) {
         mydict = new HashMap<String, Set<String>>();
         for(String s : dictionary) {
